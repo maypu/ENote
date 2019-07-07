@@ -1,0 +1,29 @@
+/* ===========
+	工具样式
+   =========== */
+
+
+
+.pull-right{
+    float: right !important;
+}
+
+.pull-left{
+    float: left !important;
+}
+
+/* ==============
+	自定义页面样式
+   ============== */
+html,body{
+    height: 100%;
+}
+body{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    /* background: #f2f2f2; */
+}
+
+.banner{
+    width: 100%;
+}
