@@ -40,7 +40,7 @@ function http_curl($url,$postData=false,$headers=array()){
 	curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);     //执行结果是否被返回，0返，1不返
 	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
 	curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,false);
-	if($headers) { curl_setopt($ch,CURLOPT_HTTPHEADER,$headers); }
+	if($headers) {curl_setopt($ch,CURLOPT_HTTPHEADER,$headers); }
 	if($postData){
 		curl_setopt($ch,CURLOPT_POST,1);
 		curl_setopt($ch,CURLOPT_POSTFIELDS, $postData);
@@ -48,4 +48,29 @@ function http_curl($url,$postData=false,$headers=array()){
 	$data = curl_exec($ch);
 	curl_close($ch);
 	return $data;
+}
+
+//获得全局微信access_token
+function get_wx_token(){
+    //获取session中的token
+    $token = session('access_token');
+    if ($token) {
+        //通过接口判断session('accesss_token')是否过期
+        $url = 'https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token='.$token;
+        $res = http_curl($url);
+        $arr = json_decode($res, true); //将结果转为数组
+        if ($arr['ip_list']) {
+            return $token;
+        }
+    }
+    //1.请求url地址
+    $appid = config('config.weixin_appID');
+    $appsecret = config('config.weixin_appsecret');
+    $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret; //请求地址
+
+    //2.curl请求
+    $res = http_curl($url);
+    $arr = json_decode($res, true); //将结果转为数组
+    session('access_token',$arr['access_token']);
+    return $arr['access_token'];
 }

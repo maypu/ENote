@@ -1,4 +1,4 @@
-<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1562493237;}*/ ?>
+<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1562683338;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,7 @@
                 </div>
                 <div class = "layui-hide-xs menu">
                     <ul class="layui-nav" lay-filter="">
-                        <span>EPusher</span>
+                        <img src="static/images/logo-1.png" width="8%">
                         <li class="layui-nav-item"><a href="/home/multiple"><i class="layui-icon layui-icon-upload"></i> 多图上传</a></li>
                         <li class="layui-nav-item"><a href="/found"><i class="layui-icon layui-icon-search"></i> 探索发现</a></li>
                         <li class="layui-nav-item"><a href="/home/log"><i class="layui-icon layui-icon-notice"></i> 更新日志</a></li>

@@ -17,9 +17,12 @@ Route::get('hello/:name', 'index/hello');
 //认证
 Route::get('auth/login/github/callback', 'auth/github_callback');
 Route::get('auth/login/github', 'auth/github_login');
+Route::get('auth/login/weixin', 'auth/weixin_login');
 
 Route::get('auth/rsa', 'auth/rsa');
 Route::get('auth', 'auth/index');
+
+Route::get('base/index', 'base/index');
 
 //微信
 Route::get('weixin/send', 'weixin/index');

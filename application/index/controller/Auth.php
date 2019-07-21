@@ -43,6 +43,27 @@ class Auth extends Controller
 		}
 	}
 
+	//用带参数的二维码实现微信登录
+    //获取登录二维码
+    public function weixin_login(){
+        $url = 'https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token='.get_wx_token();
+        $post_data = array(
+            'expire_seconds' => 600, //过期时间10分钟
+            'action_name' => 'QR_STR_SCENE',
+            'action_info' => array(
+                'scene' => array(
+                    'scene_str' => 'Login'
+                )
+            )
+        );
+        $ticket = http_curl($url, json_encode($post_data));
+        $ticket = json_decode($ticket, true);
+        if( empty($ticket['ticket']) ) {
+            return json(response(array('errCode'=>60003, 'message'=> 'WeiChat Api Response QRcode Ticket Fail!')));
+        }
+        return 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=' . $ticket['ticket'];
+    }
+
     public function index()
     {
         $key = config('config.jwt_token_key');
