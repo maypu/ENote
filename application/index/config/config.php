@@ -8,8 +8,8 @@
 
 return [
     //json web token
-    'jwt_token_key'   =>  'ifeeder_token',
-    'jwt_password_key'   =>  'ifeeder_password',
+    'jwt_token_key'   =>  'epusher_token',
+    'jwt_password_key'   =>  'epusher_password',
 
     //RSA Key Path
     'rsa_server_private_key' => './RSA/rsa_server_private_key.pem',

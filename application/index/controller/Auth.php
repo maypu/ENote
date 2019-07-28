@@ -73,7 +73,12 @@ class Auth extends Controller
             "iat" => 1356999524,
             "nbf" => 1357000000
         );
-		$token = '马彦鹏';
+		//$token = '马彦鹏';
+        $request = request();
+        $clint_ip = $request->ip();
+        $time = time();
+        $range = generate(5);
+		$token = $range.'_61.149.13.53_'.$time;
 
         $jwt = JWT::encode($token, $key);
         var_dump($jwt);
@@ -108,4 +113,13 @@ class Auth extends Controller
         var_dump($ciphertext);
         var_dump(json_decode($plaintext, true));
     }
+
+    public function clint_auth() {
+        $postStr = file_get_contents('php://input');
+        session('post_str',$postStr);
+    }
+    public function get_auth() {
+	    return session('post_str');
+    }
+
 }

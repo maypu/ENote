@@ -15,7 +15,7 @@
 
 return [
     // 应用名称
-    'app_name'               => 'ifeeder',
+    'app_name'               => 'EPusher',
     // 应用地址
     'app_host'               => '',
     // 应用调试模式

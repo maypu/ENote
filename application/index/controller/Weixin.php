@@ -64,4 +64,11 @@ class Weixin extends Auth
 		$data = json_decode($data,true); //将json数据转成数组
 		return $data;
 	}
+
+	function getWechatMessage() {
+        $request = input('post.');
+        var_dump($request);
+    }
+
+
 }

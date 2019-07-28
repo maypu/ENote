@@ -19,7 +19,7 @@ class Base extends Controller
         $time = time();
         $range = generate(5);
 
-        $clint_id = $range.base64_encode($clint_ip.'_'.$time);
+        $clint_id = $range.'_'.base64_encode($clint_ip.'_'.$time);
         session('clint_id', $clint_id);
     }
 

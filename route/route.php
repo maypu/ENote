@@ -18,6 +18,8 @@ Route::get('hello/:name', 'index/hello');
 Route::get('auth/login/github/callback', 'auth/github_callback');
 Route::get('auth/login/github', 'auth/github_login');
 Route::get('auth/login/weixin', 'auth/weixin_login');
+Route::get('auth/login/clint', 'auth/clint_auth');
+Route::get('auth/get/clint', 'auth/get_auth');
 
 Route::get('auth/rsa', 'auth/rsa');
 Route::get('auth', 'auth/index');

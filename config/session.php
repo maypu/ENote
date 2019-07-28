@@ -22,7 +22,13 @@ return [
 	// 过期时间
 	'expire'			 => '7000',
     // 驱动方式 支持redis memcache memcached
-    'type'           => '',
+    'type'           => 'redis',
     // 是否自动开启 SESSION
     'auto_start'     => true,
+    // redis主机
+    'host'       => '127.0.0.1',
+    // redis端口
+    'port'       => 6379,
+    // 密码
+    'password'   => '',
 ];
