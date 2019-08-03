@@ -15,29 +15,29 @@ Route::get('think', function () {
 Route::get('hello/:name', 'index/hello');
 
 //认证
-Route::get('auth/login/github/callback', 'auth/github_callback');
-Route::get('auth/login/github', 'auth/github_login');
-Route::get('auth/login/weixin', 'auth/weixin_login');
-Route::get('auth/login/clint', 'auth/clint_auth');
-Route::get('auth/get/clint', 'auth/get_auth');
+Route::rule('auth/login/github/callback', 'auth/github_callback');
+Route::rule('auth/login/github', 'auth/github_login');
+Route::rule('auth/login/weixin', 'auth/weixin_login');
+Route::rule('auth/login/clint', 'auth/clint_auth');
+Route::rule('auth/get/clint', 'auth/get_auth');
 
-Route::get('auth/rsa', 'auth/rsa');
-Route::get('auth', 'auth/index');
+Route::rule('auth/rsa', 'auth/rsa');
+Route::rule('auth', 'auth/index');
 
-Route::get('base/index', 'base/index');
+Route::rule('base/index', 'base/index');
 
 //微信
-Route::get('weixin/send', 'weixin/index');
+Route::rule('weixin/send', 'weixin/index');
 
 //Markdown
-Route::get('markdown/parse', 'MarkdownParse/index');
+Route::rule('markdown/parse', 'MarkdownParse/index');
 
 //index
-Route::get('/', 'Index/index');
+Route::rule('/', 'Index/index');
 
 //列表
-Route::get('list', 'index/artList');
-Route::get('list/:name', 'index/artList');
+Route::rule('list', 'index/artList');
+Route::rule('list/:name', 'index/artList');
 
 //Miss路由
 Route::miss('index/miss');

@@ -115,8 +115,10 @@ class Auth extends Controller
     }
 
     public function clint_auth() {
-        $postStr = file_get_contents('php://input');
-        session('post_str',$postStr);
+        $postStr = request()->param('data');
+        $data['value'] = json_encode($postStr);
+        $res = Db::table('eps_config')->insert($data);
+        return $res;
     }
     public function get_auth() {
 	    return session('post_str');
