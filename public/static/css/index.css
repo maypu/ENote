@@ -1,9 +1,7 @@
 /* ===========
 	工具样式
+	author: maypu
    =========== */
-
-
-
 .pull-right{
     float: right !important;
 }
@@ -11,7 +9,6 @@
 .pull-left{
     float: left !important;
 }
-
 /* ==============
 	自定义页面样式
    ============== */
@@ -23,7 +20,15 @@ body{
     line-height: 1.5;
     /* background: #f2f2f2; */
 }
-
 .banner{
     width: 100%;
+}
+.header-tittle{
+    padding-top: 15px;
+    width: 15%;
+}
+.backimage{
+    background: url('../images/background.jpg') repeat-y;
+    width: 100%;
+    height: 4000px;
 }

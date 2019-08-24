@@ -1,4 +1,4 @@
-<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1562683338;}*/ ?>
+<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1566589401;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,50 +8,52 @@
     <title>Title</title>
     <link rel="stylesheet" href="static/dist/layui/css/layui.css">
     <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/dist/github-markdown-css/github-markdown.css">
 </head>
 <body>
     <!-- 顶部导航栏 -->
-    <div class="layui-header header">
-        <div class = "layui-row">
-            <div class = "layui-col-lg12">
-                <div class="left-menu">
-                    <a href="">
-                        <div id="logo">
-<!--                            <img src="static/images/logo.png" width="10%">-->
-                        </div>
-                    </a>
+    <div class="layui-bg-black">
+        <div class="layui-container">
+            <div class = "layui-row">
+                <div class = "layui-col-lg12">
+                    <div class = "layui-hide-xs menu">
+                        <a href="index"><img class="header-tittle" src="static/images/logo-4.png"></a>
+                        <ul class="layui-nav pull-right" lay-filter="">
+                            <li class="layui-nav-item"><a href="/home">首页</a></li>
+                            <li class="layui-nav-item"><a href="/document">文档</a></li>
+                            <li class="layui-nav-item"><a href="/apitest">测试</a></li>
+                            <li class="layui-nav-item">
+                                <a href="#" rel = "nofollow"> 登录</a>
+                                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                                    <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/install" rel = "nofollow" target = "_blank">安装ImgURL</a></dd>
+                                    <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/api" rel = "nofollow" target = "_blank">ImgURL API</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">
+                        <ul class="layui-nav" lay-filter="">
+                            <li class="layui-nav-item"><a href="/found">文档</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class = "layui-hide-xs menu">
-                    <ul class="layui-nav" lay-filter="">
-                        <img src="static/images/logo-1.png" width="8%">
-                        <li class="layui-nav-item"><a href="/home/multiple"><i class="layui-icon layui-icon-upload"></i> 多图上传</a></li>
-                        <li class="layui-nav-item"><a href="/found"><i class="layui-icon layui-icon-search"></i> 探索发现</a></li>
-                        <li class="layui-nav-item"><a href="/home/log"><i class="layui-icon layui-icon-notice"></i> 更新日志</a></li>
-                        <li class="layui-nav-item">
-                            <a href="#" rel = "nofollow"><i class="layui-icon">&#xe705;</i> 帮助文档</a>
-                            <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                                <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/install" rel = "nofollow" target = "_blank">安装ImgURL</a></dd>
-                                <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/api" rel = "nofollow" target = "_blank">ImgURL API</a></dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item"><a href="https://github.com/helloxz/imgurl" target = "_blank" rel = "nofollow"><i class="layui-icon">&#xe635;</i> 源码</a></li>
-                        <li class="layui-nav-item"><a href="/page/use"><i class="layui-icon">&#xe60b;</i> 关于</a></li>
-                        <!-- 简单判断用户是否登录 -->
-                        <li class="layui-nav-item"><a href="/admin/index"><i class="layui-icon layui-icon-console"></i> 后台管理</a></li>
-                        <!-- 简单判断用户是否登录END -->
-                    </ul>
-                </div>
-                <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">
-                    <ul class="layui-nav" lay-filter="">
-                        <li class="layui-nav-item"><a href="/found"><i class="layui-icon layui-icon-search"></i> 发现</a></li>
-                    </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="backimage">
+        <div class="layui-container" style="padding-top: 20px">
+            <!--        <img class="banner" src="static/images/banner-3.png" alt="banner">-->
+            <div class="layui-card">
+                <div class="layui-card-header">卡片面板</div>
+                <div class="layui-card-body markdown-body" id="md_contain">
+                    卡片式面板面板通常用于非白色背景色的主体内<br>
+                    从而映衬出边框投影
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <img class="banner" src="static/images/banner-3.png" alt="banner">
-    </div>
+
     <!-- 顶部导航栏 End -->
     <div class="layui-container">
         <div class="layui-row">
@@ -63,10 +65,12 @@
     <script>
         layui.config({
             base: 'static/dist/layui-v2.4.5/util/' //设定扩展的Layui模块的所在目录，一般用于外部模块扩展
-        }).use(['element','jquery','menu','blog','layer'],function(){
+        }).use(['element','jquery','menu','layer'],function(){
             element = layui.element,$ = layui.$,menu = layui.menu;
 
-
+            $.get('./parse',{},function (data) {
+                $('#md_contain').html(data);
+            });
         });
 
     </script>

@@ -9,12 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
-});
-Route::get('hello/:name', 'index/hello');
-
-//认证
+///认证
 Route::rule('auth/login/github/callback', 'auth/github_callback');
 Route::rule('auth/login/github', 'auth/github_login');
 Route::rule('auth/login/weixin', 'auth/weixin_login');
@@ -34,6 +29,7 @@ Route::rule('markdown/parse', 'MarkdownParse/index');
 
 //index
 Route::rule('/', 'Index/index');
+Route::rule('/parse','Index/parse');
 
 //列表
 Route::rule('list', 'index/artList');
