@@ -13,7 +13,9 @@ class Index extends Auth
     public function parse($code = '')
     {
         $Parsedown = new Parsedown();
-        $mdFile = file_get_contents('./static/markdown/单用户通道.md');
+        //$mdFile = file_get_contents('./static/markdown/单用户通道.md');
+        $mdFile = file_get_contents('./static/markdown/介绍.md');
+        //$mdFile2 = file_get_contents('./static/markdown/单用户通道.md');
         return $Parsedown->text($mdFile);
 	}
 

@@ -1,4 +1,4 @@
-<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1566589401;}*/ ?>
+<?php /*a:1:{s:76:"E:\wamp\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1566666805;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +45,6 @@
         <div class="layui-container" style="padding-top: 20px">
             <!--        <img class="banner" src="static/images/banner-3.png" alt="banner">-->
             <div class="layui-card">
-                <div class="layui-card-header">卡片面板</div>
                 <div class="layui-card-body markdown-body" id="md_contain">
                     卡片式面板面板通常用于非白色背景色的主体内<br>
                     从而映衬出边框投影
@@ -53,12 +52,8 @@
             </div>
         </div>
     </div>
-
-    <!-- 顶部导航栏 End -->
-    <div class="layui-container">
-        <div class="layui-row">
-
-        </div>
+    <div class="layui-bg-black footer">
+        EPusher
     </div>
 
     <script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
