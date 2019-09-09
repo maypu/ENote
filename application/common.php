@@ -59,18 +59,18 @@ function get_wx_token(){
         $url = 'https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token='.$token;
         $res = http_curl($url);
         $arr = json_decode($res, true); //将结果转为数组
-        if ($arr['ip_list']) {
+        if (array_key_exists('ip_list', $arr)) {
             return $token;
         }
     }
     //1.请求url地址
-    $appid = config('config.weixin_appID');
-    $appsecret = config('config.weixin_appsecret');
-    $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret; //请求地址
-
+//    $appid = config('config.weixin_appID');
+//    $appsecret = config('config.weixin_appsecret');
+//    $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret; //微信端请求地址
+    $we7_host = config('config.we7_host');
+    $url = "http://$we7_host/api/epusher.php?code=getAccessToken";
     //2.curl请求
-    $res = http_curl($url);
-    $arr = json_decode($res, true); //将结果转为数组
-    session('access_token',$arr['access_token']);
-    return $arr['access_token'];
+    $access_token = http_curl($url);
+    session('access_token',$access_token);
+    return $access_token;
 }

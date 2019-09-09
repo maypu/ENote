@@ -13,9 +13,9 @@ class Index extends Auth
     public function parse($code = '')
     {
         $Parsedown = new Parsedown();
-        //$mdFile = file_get_contents('./static/markdown/单用户通道.md');
-        $mdFile = file_get_contents('./static/markdown/介绍.md');
-        //$mdFile2 = file_get_contents('./static/markdown/单用户通道.md');
+        //$mdFile = file_get_contents('./markdown/单用户通道.md');
+        $mdFile = file_get_contents('./markdown/介绍.md');
+        //$mdFile2 = file_get_contents('./markdown/单用户通道.md');
         return $Parsedown->text($mdFile);
 	}
 
@@ -26,10 +26,12 @@ class Index extends Auth
 
     public function miss()
     {
+        $request = request();
         return json(
             array(
                 'error' => 1,
                 'message' => '请求地址错误',
+                'url' => request()->url(true),
                 'data' => array()
             )
         );

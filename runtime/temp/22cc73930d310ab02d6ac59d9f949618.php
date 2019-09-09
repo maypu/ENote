@@ -1,3 +1,4 @@
+<?php /*a:1:{s:78:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1567256032;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -23,6 +23,8 @@ Route::rule('base/index', 'base/index');
 
 //微信
 Route::rule('weixin/send', 'weixin/index');
+Route::rule('weixin/login', 'weixin/login');
+Route::rule('weixin/qrcode', 'weixin/qrcode');
 
 //Markdown
 Route::rule('markdown/parse', 'MarkdownParse/index');

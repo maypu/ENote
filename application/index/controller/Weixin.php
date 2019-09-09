@@ -7,13 +7,32 @@ class Weixin extends Auth
 {
 	public function index()
 	{
-//		return $this->get_wx_token();
-//		return session('access_token');
 		$res = $this->sendMessage('oZVeC1v6kuC5_nD_ODV-02-ZAPP4','测试平台','maypu','点击查看详细内容');	//调用方法
 		return json($res);
+
 	}
 
-	//推送模板信息  参数：发送给谁的openid
+	function login()
+    {
+        //二维码请求参数结构定义
+        $barcode = array(
+            'expire_seconds' => 2592000,
+            'action_name' => 'QR_SCENE',
+            'action_info' => array(
+                'scene' => array(
+                    'scene_id' => 123
+                ),
+            ),
+        );
+        $QRCode = $this->generateQRCode($barcode);
+        return $QRCode;
+    }
+
+    function qrcode() {
+        return $this->fetch();
+    }
+
+    //推送模板信息  参数：发送给谁的openid
 	function sendMessage($openid,$platform,$developer,$remark) {
 		//获取全局token
 		$token = $this->get_wx_token();
@@ -68,6 +87,18 @@ class Weixin extends Auth
 	function getWechatMessage() {
         $request = input('post.');
         var_dump($request);
+    }
+
+    //通过we7生成带参数的二维码
+    function generateQRCode($barcode) {
+        $we7_host = config('config.we7_host');
+        $url = "http://$we7_host/api/epusher.php?code=generateQRCode";
+        $postdata['data'] = $barcode;
+        $request = http_curl($url,http_build_query($postdata));
+        $res = json_decode($request,true);
+        if (!array_key_exists('ticket',$res)) return false;
+        $imgUrl = 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket='.urlencode($res['ticket']);
+        return $imgUrl;
     }
 
 

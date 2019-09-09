@@ -22,7 +22,10 @@ return [
     'github_client_secret' => '81a3fd40c285db29b3aef7193e3c0f5d90e210e2',
 
     //Weixin Token
-    'weixin_appID' => 'wxe620e2a616827dd6',
-    'weixin_appsecret' => 'abdce9ab8a59b35cc8b01138548644d1',
+    'weixin_appID' => 'wxda207e93dab8d253',
+    'weixin_appsecret' => '0c9962de526b60603bc257e4da3fa1fb',
     'weixin_template_id' => '2C2xbxhm0o8PBLEcmVusCfHLD4xsvh2_gRCoSDN6WnA',
+
+    //we7
+    'we7_host' => 'wq.ebans.net',
 ];
