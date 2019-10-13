@@ -1,4 +1,4 @@
-<?php /*a:1:{s:78:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1567256032;}*/ ?>
+<?php /*a:1:{s:78:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1570540940;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +24,6 @@
                             <li class="layui-nav-item"><a href="/document">通道</a></li>
                             <li class="layui-nav-item"><a href="/apitest">测试</a></li>
                             <li class="layui-nav-item"><a href="#" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
-<!--                            <li class="layui-nav-item">-->
-<!--                                <a href="#"><img class="user-avatar" src="static/images/info-img.png" alt=""></a>-->
-<!--                                <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
-<!--                                    <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/install" rel = "nofollow" target = "_blank">个人中心</a></dd>-->
-<!--                                    <dd><a href="https://www.xiaoz.me/doc/doc-imgurl/api" rel = "nofollow" target = "_blank">注销</a></dd>-->
-<!--                                </dl>-->
-<!--                            </li>-->
                         </ul>
                     </div>
                     <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">
@@ -64,7 +57,7 @@
         </div>
     </div>
     <div class="layui-bg-black footer">
-        EPusher
+        &copy;&nbsp;EPusher
     </div>
 
     <script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
@@ -76,9 +69,7 @@
 
             $.get('./parse',{},function (data) {
                 $('#md_contain').html(data);
-                $(document).load(function () {
-                    $('.backimage').height($('.layui-card').height()+50);
-                });
+                $('.backimage').height($('.layui-card').height()+50);
             });
 
             $('#login').on('click', function () {

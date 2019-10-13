@@ -36,9 +36,13 @@
                 $('#loading').hide();
                 $('#imgQrcode').show();
             });
-
+            let localToken = '';
             //定时判断是否扫码成功
-
+            function isLogin() {
+                $.get('./login/isLogin',{token:localToken},function (data) {
+                    console.log(data);
+                });
+            }
         });
 
     </script>
