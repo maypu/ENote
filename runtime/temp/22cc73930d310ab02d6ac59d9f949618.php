@@ -1,4 +1,4 @@
-<?php /*a:1:{s:78:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1570540940;}*/ ?>
+<?php /*a:1:{s:78:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\index\index.html";i:1571925336;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +19,10 @@
                     <div class = "layui-hide-xs menu">
                         <a href="index"><img class="header-tittle" src="static/images/logo-4.png"></a>
                         <ul class="layui-nav pull-right" lay-filter="">
-                            <li class="layui-nav-item"><a href="/home">首页</a></li>
-                            <li class="layui-nav-item"><a href="/document">文档</a></li>
-                            <li class="layui-nav-item"><a href="/document">通道</a></li>
-                            <li class="layui-nav-item"><a href="/apitest">测试</a></li>
+                            <li class="layui-nav-item"><a href="./home">首页</a></li>
+                            <li class="layui-nav-item"><a href="./doc">文档</a></li>
+                            <li class="layui-nav-item"><a href="./chanel">通道</a></li>
+                            <li class="layui-nav-item"><a href="./apitest">测试</a></li>
                             <li class="layui-nav-item"><a href="#" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                                 https://epusher.ebans.net/api/send/?clint_id=通道ID&title=测试消息&content=测试内容
                             </code>
                         </p>
-                        <p>可直接复制到浏览器访问</p>
+                        <p>登录后显示具体ID，可直接复制到浏览器访问</p>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<?php /*a:1:{s:80:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\weixin\qrcode.html";i:1567256876;}*/ ?>
+<?php /*a:1:{s:80:"E:\wamp64\www\phpStrom_Project\EPusher\application\index\view\weixin\qrcode.html";i:1570973171;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +37,13 @@
                 $('#loading').hide();
                 $('#imgQrcode').show();
             });
-
+            let localToken = '';
             //定时判断是否扫码成功
-
+            function isLogin() {
+                $.get('./login/isLogin',{token:localToken},function (data) {
+                    console.log(data);
+                });
+            }
         });
 
     </script>

@@ -29,6 +29,8 @@ class Weixin extends Auth
     }
 
     function qrcode() {
+        // 临时关闭当前模板的布局功能
+        $this->view->engine->layout(false);
         return $this->fetch();
     }
 

@@ -37,5 +37,7 @@ return [
 		'__PUBLIC__' => '/public',
 		'__STATIC__' => '/static',
 	],
+    'layout_on'     =>  true,
+    'layout_name'   =>  'layout',
 
 ];
