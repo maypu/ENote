@@ -19,6 +19,13 @@ class Index extends Auth
         return $Parsedown->text($mdFile);
 	}
 
+	public function doc()
+    {
+        $Parsedown = new Parsedown();
+        $mdFile = file_get_contents('./markdown/介绍.md');
+        return $this->fetch();
+    }
+
     public function artList($name = '')
     {
         return 'hello world,' . $name;

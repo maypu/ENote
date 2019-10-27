@@ -1,30 +1,20 @@
-<div class="backimage">
-    <div class="layui-container" style="padding-top: 20px">
-        <!--        <img class="banner" src="static/images/banner-3.png" alt="banner">-->
-        <div class="layui-card">
-            <div class="layui-card-body markdown-body">
-                <div id="md_contain"></div>
-                <div id="">
-                    <p>快速接入</p>
-                    <p>
-                        <code>
-                            https://epusher.ebans.net/api/send/?clint_id=通道ID&title=测试消息&content=测试内容
-                        </code>
-                    </p>
-                    <p>登录后显示具体ID，可直接复制到浏览器访问</p>
-                </div>
-            </div>
-        </div>
+<div class="markdown-body">
+    <div id="md_contain"></div>
+
+    <div id="">
+        <p>快速接入</p>
+        <p>
+            <code>
+                https://epusher.ebans.net/api/send/?clint_id=通道ID&title=测试消息&content=测试内容
+            </code>
+        </p>
+        <p>登录后显示具体ID，可直接复制到浏览器访问</p>
     </div>
 </div>
 
-
-<script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
 <script>
-    layui.config({
-        base: 'static/dist/layui-v2.4.5/util/' //设定扩展的Layui模块的所在目录，一般用于外部模块扩展
-    }).use(['element','jquery','menu','layer'],function(){
-        element = layui.element,$ = layui.$,menu = layui.menu;
+    layui.use(['element','jquery','layer'],function(){
+        element = layui.element,$ = layui.$;
 
         $.get('./parse',{},function (data) {
             $('#md_contain').html(data);

@@ -33,6 +33,15 @@ Route::rule('markdown/parse', 'MarkdownParse/index');
 Route::rule('/', 'Index/index');
 Route::rule('/parse','Index/parse');
 
+//doc
+Route::rule('/doc','Index/doc');
+
+//chanel
+Route::rule('/chanel','Chanel/index');
+
+//message
+Route::rule('/apitest','Message/api_test');
+
 //列表
 Route::rule('list', 'index/artList');
 Route::rule('list/:name', 'index/artList');

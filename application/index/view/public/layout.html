@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="UTF-8">
     <title>Title</title>
-    {include file="./headQuote" /}
+    {include file="./public/headQuote" /}
 </head>
 <body>
-    {include file="./navigation" /}
-    {__CONTENT__}
-    {include file="./footer" /}
+    {include file="./public/navigation" /}
+    <div class="backimage">
+        <div class="layui-container" style="padding-top: 20px">
+            <!-- <img class="banner" src="static/images/banner-3.png" alt="banner">-->
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    {__CONTENT__}
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    {/include file="./public/footer" /}-->
 </body>
 </html>

@@ -38,6 +38,6 @@ return [
 		'__STATIC__' => '/static',
 	],
     'layout_on'     =>  true,
-    'layout_name'   =>  'layout',
+    'layout_name'   =>  'public/layout',
 
 ];
