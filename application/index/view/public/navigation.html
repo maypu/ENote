@@ -4,7 +4,7 @@
         <div class = "layui-row">
             <div class = "layui-col-lg12">
                 <div class = "layui-hide-xs menu">
-                    <a href="index"><img class="header-tittle" src="static/images/logo-4.png"></a>
+                    <a href="./"><img class="header-tittle" src="static/images/logo-4.png"></a>
                     <ul class="layui-nav pull-right" lay-filter="">
                         <li class="layui-nav-item"><a href="./">首页</a></li>
                         <li class="layui-nav-item"><a href="./doc">文档</a></li>
@@ -23,4 +23,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    layui.use(['element','jquery','layer'],function(){
+        element = layui.element,$ = layui.$;
+
+        $('#login').on('click', function () {
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '登录',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['400px', '400px'],
+                content: './weixin/qrcode' //iframe的url
+            });
+        });
+
+    });
+
+</script>
 <!-- End 顶部导航栏 -->

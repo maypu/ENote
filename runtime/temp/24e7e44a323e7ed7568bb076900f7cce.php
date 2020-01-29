@@ -1,3 +1,4 @@
+<?php /*a:1:{s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\weixin\qrcode.html";i:1580116858;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

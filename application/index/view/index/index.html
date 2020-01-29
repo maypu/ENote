@@ -16,22 +16,9 @@
     layui.use(['element','jquery','layer'],function(){
         element = layui.element,$ = layui.$;
 
-        $.get('./parse',{},function (data) {
+        $.get('./parse',{path: './markdown/介绍.md'},function (data) {
             $('#md_contain').html(data);
             $('.backimage').height($('.layui-card').height()+50);
-        });
-
-        $('#login').on('click', function () {
-
-            //iframe层
-            layer.open({
-                type: 2,
-                title: '登录',
-                shadeClose: true,
-                shade: 0.8,
-                area: ['400px', '400px'],
-                content: './weixin/qrcode' //iframe的url
-            });
         });
 
     });

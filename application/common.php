@@ -68,7 +68,9 @@ function get_wx_token(){
 //    $appsecret = config('config.weixin_appsecret');
 //    $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret; //微信端请求地址
     $we7_host = config('config.we7_host');
-    $url = "http://$we7_host/api/epusher.php?code=getAccessToken";
+    $Aid = config('config.we7_Aid');
+    $url = "http://$we7_host/api/epusher.php?Aid=$Aid&code=getAccessToken";
+
     //2.curl请求
     $access_token = http_curl($url);
     session('access_token',$access_token);

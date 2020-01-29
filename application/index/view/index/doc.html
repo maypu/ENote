@@ -1,34 +1,67 @@
-<h1>Epusher帮助文档</h1>
-
+<style>
+    body {
+        overflow-y: hidden;
+    }
+    #md_contain {
+        overflow-y: scroll;
+    }
+</style>
+<h1 style="margin-top: 10px">Epusher帮助文档</h1>
+<hr>
 <div class="layui-row">
     <div class="layui-col-md3">
-        111
+        <ul class="layui-nav layui-bg-black layui-nav-tree">
+            <li class="layui-nav-item"><a href="#intro">介绍</a></li>
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">接入</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="#single">单用户通道</a></dd>
+                    <dd><a href="#double">多用户通道</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="#question">常见问题</a></li>
+        </ul>
     </div>
-    <div class="layui-col-md9">
-        2222
+    <div class="layui-col-md9 markdown-body">
+        <div id="md_contain"></div>
     </div>
 </div>
+<script>
+    layui.use(['jquery'],function(){
+        $ = layui.$;
 
+        $('#md_contain').height($(document.body).height()-150);
 
+        if("onhashchange" in window) {
+            $(window).on('hashchange', function() {
+                getMarkdown();
+            });
+        }
 
-<ul class="layui-nav layui-bg-cyan layui-nav-tree" lay-filter="test">
-    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-    <li class="layui-nav-item layui-nav-itemed">
-        <a href="javascript:;">默认展开</a>
-        <dl class="layui-nav-child">
-            <dd><a href="javascript:;">选项1</a></dd>
-            <dd><a href="javascript:;">选项2</a></dd>
-            <dd><a href="">跳转</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item">
-        <a href="javascript:;">解决方案</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item"><a href="">产品</a></li>
-    <li class="layui-nav-item"><a href="">大数据</a></li>
-</ul>
+        function getMarkdown() {
+            var hash = window.location.hash;
+
+            var markdown_path = './markdown/介绍.md';
+            if (hash == '#single') {
+                markdown_path = './markdown/单用户通道.md';
+            } else if (hash == '#double') {
+                markdown_path = './markdown/多用户通道.md';
+            } else if(hash == '#question') {
+                markdown_path = './markdown/常见问题.md';
+            }
+            $.get('./parse',{path: markdown_path},function (data) {
+                $('#md_contain').html(data);
+            });
+        }
+
+        //初始触发
+        setTimeout(function () {
+            if (window.location.hash == '') {
+                $('a[href="#intro"]').parents().trigger("click");
+            }
+            getMarkdown();
+        },500);
+
+    });
+
+</script>

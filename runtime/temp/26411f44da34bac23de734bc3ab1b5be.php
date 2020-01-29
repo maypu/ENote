@@ -1,9 +1,10 @@
+<?php /*a:1:{s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\weixin\qrcode.html";i:1568533898;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>二维码</title>
-    <link rel="stylesheet" href="../static/dist/layui-v2.4.5/css/layui.css">
+    <link rel="stylesheet" href="../static/dist/layui/css/layui.css">
     <style>
         body{
             text-align: center;
@@ -20,7 +21,7 @@
 </head>
 <body>
     <div id="loading">
-        <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
+        <i class="layui-icon layui-icon-loading layui-anim-rotate layui-anim-loop"></i>
     </div>
     <img id="imgQrcode" class="" src="#" alt="qrcode"></img>
     <div>微信扫码登录</div>
@@ -36,13 +37,9 @@
                 $('#loading').hide();
                 $('#imgQrcode').show();
             });
-            let localToken = '';
+
             //定时判断是否扫码成功
-            function isLogin() {
-                $.get('./login/isLogin',{token:localToken},function (data) {
-                    console.log(data);
-                });
-            }
+
         });
 
     </script>

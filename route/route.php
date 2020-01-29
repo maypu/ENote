@@ -40,6 +40,7 @@ Route::rule('/doc','Index/doc');
 Route::rule('/chanel','Chanel/index');
 
 //message
+Route::rule('/send','Message/send');
 Route::rule('/apitest','Message/api_test');
 
 //列表

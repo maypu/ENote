@@ -37,9 +37,10 @@ class Weixin extends Auth
     //推送模板信息  参数：发送给谁的openid
 	function sendMessage($openid,$platform,$developer,$remark) {
 		//获取全局token
-		$token = $this->get_wx_token();
+		$token = get_wx_token();
 		$url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".$token; //模板信息请求地址
 		//发送的模板信息(微信要求json格式，这里为数组（方便添加变量）格式，然后转为json)
+		var_dump($openid);
 		$post_data = array(
 			"touser"=>$openid, //推送给谁,openid
 			"template_id"=>config('config.weixin_template_id'), //微信后台的模板信息id
@@ -49,16 +50,12 @@ class Weixin extends Auth
 					"value"=>"您有新消息，请及时查看！",
 					"color"=>"#000000"
 				),
-				"keyword1"=>array(			//发送平台
-					"value"=>$platform,
+				"content"=>array(			//发送平台
+					"value"=>'10.221.44.198 磁盘分区0使用90%, 剩余0.7G.',
 					"color"=>"#2E8B57"
 				),
-				"keyword2"=>array(			//开发者
-					"value"=>$developer,
-					"color"=>"#2E8B57"
-				),
-				"keyword3"=> array(			//发送时间
-					"value"=>date('Y-m-d H:i:s'),
+				"occurtime"=>array(			//开发者
+					"value"=>'2014-04-08 17:00:02',
 					"color"=>"#2E8B57"
 				),
 				"remark"=> array(			//备注
@@ -71,14 +68,13 @@ class Weixin extends Auth
 		//发送数据，post方式
 		$post_data = json_encode($post_data);
 		$data = http_curl($url,$post_data);
-		$data = json_decode($data,true); //将json数据转成数组
 		return $data;
 	}
 
 	//获取模板信息-行业信息（参考，未使用）
 	function getIndustry(){
 		//用户同意授权后，会传过来一个code
-		$token = $this->get_wx_token();
+		$token = get_wx_token();
 		$url = "https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=".$token;
 		//请求token，get方式
 		$data = http_curl($url);
@@ -94,11 +90,12 @@ class Weixin extends Auth
     //通过we7生成带参数的二维码
     function generateQRCode($barcode) {
         $we7_host = config('config.we7_host');
-        $url = "http://$we7_host/api/epusher.php?code=generateQRCode";
+		$Aid = config('config.we7_Aid');
+        $url = "http://$we7_host/api/epusher.php?Aid=$Aid&code=generateQRCode";
         $postdata['data'] = $barcode;
         $request = http_curl($url,http_build_query($postdata));
         $res = json_decode($request,true);
-        if (!array_key_exists('ticket',$res)) return false;
+        if (is_array($res) && !array_key_exists('ticket',$res)) return false;
         $imgUrl = 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket='.urlencode($res['ticket']);
         return $imgUrl;
     }
