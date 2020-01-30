@@ -3,7 +3,7 @@
         overflow-y: hidden;
     }
     #md_contain {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 </style>
 <h1 style="margin-top: 10px">Epusher帮助文档</h1>
@@ -57,9 +57,12 @@
         //初始触发
         setTimeout(function () {
             if (window.location.hash == '') {
-                $('a[href="#intro"]').parents().trigger("click");
+                window.location.hash = '#intro';
+                $('a[href="#intro"]').trigger("click");
+            } else {
+                $('a[href="'+window.location.hash+'"]').trigger("click");
+                getMarkdown();
             }
-            getMarkdown();
         },500);
 
     });

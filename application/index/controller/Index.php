@@ -27,11 +27,6 @@ class Index extends Auth
         return $this->fetch();
     }
 
-    public function artList($name = '')
-    {
-        return 'hello world,' . $name;
-    }
-
     public function miss()
     {
         return json(

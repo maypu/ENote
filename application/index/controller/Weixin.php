@@ -100,5 +100,21 @@ class Weixin extends Auth
         return $imgUrl;
     }
 
+    //获取粉丝信息
+    function fansQueryInfo($openid) {
+		$we7_host = config('config.we7_host');
+		$Aid = config('config.we7_Aid');
+
+		if (is_array($openid)) {
+			$url = "http://$we7_host/api/epusher.php?Aid=$Aid&code=fansBatchQueryInfo"; //批量获取
+			$postdata['data'] = json_encode($openid);
+		} else {
+			$url = "http://$we7_host/api/epusher.php?Aid=$Aid&code=fansQueryInfo";
+			$postdata['data'] = $openid;
+		}
+		$request = http_curl($url,http_build_query($postdata));
+		return $request;
+	}
+
 
 }

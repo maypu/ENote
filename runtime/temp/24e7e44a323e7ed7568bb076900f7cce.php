@@ -1,4 +1,4 @@
-<?php /*a:1:{s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\weixin\qrcode.html";i:1580116858;}*/ ?>
+<?php /*a:1:{s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\weixin\qrcode.html";i:1580288822;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,16 +6,22 @@
     <title>二维码</title>
     <link rel="stylesheet" href="../static/dist/layui-v2.4.5/css/layui.css">
     <style>
-        body{
+        body {
             text-align: center;
         }
-        img{
+        img {
             height: 300px;
             display: none;
         }
-        #loading i{
+        #loading {
+            height: 300px;
+        }
+        #loading i {
             display: inline-block;
             font-size: 40px;
+        }
+        .loginSucc {
+            display: none;
         }
     </style>
 </head>
@@ -24,7 +30,8 @@
         <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
     </div>
     <img id="imgQrcode" class="" src="#" alt="qrcode"></img>
-    <div>微信扫码登录</div>
+    <div class="loginLoad">微信扫码登录</div>
+    <div class="loginSucc"><i class="layui-icon layui-icon-auz" style="color: #5FB878"></i>微信扫码成功</div>
     <script src="../static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
     <script>
         layui.config({
@@ -34,9 +41,15 @@
 
             $.get('./login',{},function (data) {
                 $('#imgQrcode').attr('src', data);
-                $('#loading').hide();
-                $('#imgQrcode').show();
+                $("#imgQrcode").load(function(){    //图片加载完成后触发
+                    $('#loading').hide();
+                    $('#imgQrcode').show();
+                });
             });
+            setTimeout(function () {
+                $('.loginLoad').hide();
+                $('.loginSucc').show();
+            },2000);
             let localToken = '';
             //定时判断是否扫码成功
             function isLogin() {

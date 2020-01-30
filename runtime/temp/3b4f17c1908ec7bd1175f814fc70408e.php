@@ -1,4 +1,4 @@
-<?php /*a:4:{s:73:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\chanel\index.html";i:1580009618;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580009618;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580009618;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580178246;}*/ ?>
+<?php /*a:4:{s:73:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\chanel\index.html";i:1580301750;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580259244;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580301655;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580293286;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- 引用文件 -->
-<link rel="stylesheet" href="static/dist/layui-v2.4.5/css/layui.css">
+<link rel="stylesheet" href="static/dist/layui-v2.5.6/css/layui.css">
 <link rel="stylesheet" href="static/css/index.css">
 <link rel="stylesheet" href="static/dist/github-markdown-css/github-markdown.css">
-<script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
+<script src="static/dist/layui-v2.5.6/layui.js" charset="utf-8"></script>
 
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
                         <li class="layui-nav-item"><a href="./doc">文档</a></li>
                         <li class="layui-nav-item"><a href="./chanel">通道</a></li>
                         <li class="layui-nav-item"><a href="./apitest">测试</a></li>
-                        <li class="layui-nav-item"><a href="#" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
+                        <li class="layui-nav-item"><a href="javascript:;" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
                     </ul>
                 </div>
                 <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">
@@ -68,11 +68,17 @@
 </script>
 <!-- End 顶部导航栏 -->
     <div class="backimage">
-        <div class="layui-container" style="padding-top: 20px">
-            <!-- <img class="banner" src="static/images/banner-3.png" alt="banner">-->
+        <div class="layui-container" style="padding-top: 10px">
+
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <div>
+                    <style>
+    .layui-badge{
+        margin: auto 3px;
+        cursor: pointer;
+    }
+</style>
+<div>
     <button type="button" id="AddChanel" class="layui-btn layui-btn-normal">添加通道</button>
     <table class="layui-table" lay-skin="line" style="width: 100%">
         <thead>
@@ -80,6 +86,8 @@
                 <th>通道名称</th>
                 <th>服务状态</th>
                 <th>创建时间</th>
+                <th>操作</th>
+                <th>操作</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -89,18 +97,24 @@
                 <td>2016-11-29</td>
                 <td>人生就像是一场修行</td>
                 <td>人生就像是一场修行</td>
+                <td><span class="layui-badge layui-bg-green"><i class="layui-icon layui-icon-time"></i>日志记录</span></td>
+                <td><span class="layui-badge layui-bg-blue"><i class="layui-icon layui-icon-edit"></i></span><span class="layui-badge"><i class="layui-icon layui-icon-delete"></i></span></td>
             </tr>
             <tr>
                 <td>许闲心</td>
                 <td>2016-11-28</td>
                 <td>2016-11-28</td>
                 <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+                <td>2016-11-28</td>
+                <td>2016-11-28</td>
             </tr>
             <tr>
                 <td>许闲心</td>
                 <td>2016-11-28</td>
                 <td>2016-11-28</td>
                 <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+                <td>2016-11-28</td>
+                <td>2016-11-28</td>
             </tr>
         </tbody>
     </table>

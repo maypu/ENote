@@ -26,9 +26,6 @@ Route::rule('weixin/send', 'weixin/index');
 Route::rule('weixin/login', 'weixin/login');
 Route::rule('weixin/qrcode', 'weixin/qrcode');
 
-//Markdown
-Route::rule('markdown/parse', 'MarkdownParse/index');
-
 //index
 Route::rule('/', 'Index/index');
 Route::rule('/parse','Index/parse');
@@ -43,17 +40,11 @@ Route::rule('/chanel','Chanel/index');
 Route::rule('/send','Message/send');
 Route::rule('/apitest','Message/api_test');
 
-//列表
-Route::rule('list', 'index/artList');
-Route::rule('list/:name', 'index/artList');
-
 //Miss路由
 Route::miss('index/miss');
 
 //API路由分组
 Route::group('api/v1', function () {
-    Route::rule('list', 'index/artList');
-    Route::rule('list/:name', 'index/artList');
     Route::miss('index/miss');
 });
 

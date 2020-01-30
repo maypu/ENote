@@ -1,4 +1,4 @@
-<?php /*a:4:{s:72:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\index\index.html";i:1580219423;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580259244;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580222641;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580178246;}*/ ?>
+<?php /*a:4:{s:72:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\index\index.html";i:1580219423;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580259244;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580301655;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580293286;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- 引用文件 -->
-<link rel="stylesheet" href="static/dist/layui-v2.4.5/css/layui.css">
+<link rel="stylesheet" href="static/dist/layui-v2.5.6/css/layui.css">
 <link rel="stylesheet" href="static/css/index.css">
 <link rel="stylesheet" href="static/dist/github-markdown-css/github-markdown.css">
-<script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
+<script src="static/dist/layui-v2.5.6/layui.js" charset="utf-8"></script>
 
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
                         <li class="layui-nav-item"><a href="./doc">文档</a></li>
                         <li class="layui-nav-item"><a href="./chanel">通道</a></li>
                         <li class="layui-nav-item"><a href="./apitest">测试</a></li>
-                        <li class="layui-nav-item"><a href="#" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
+                        <li class="layui-nav-item"><a href="javascript:;" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
                     </ul>
                 </div>
                 <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">

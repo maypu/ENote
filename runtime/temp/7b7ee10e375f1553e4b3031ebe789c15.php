@@ -1,4 +1,4 @@
-<?php /*a:4:{s:77:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\message\api_test.html";i:1580208812;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580259244;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580222641;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580178246;}*/ ?>
+<?php /*a:4:{s:77:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\message\api_test.html";i:1580308590;s:74:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\public\layout.html";i:1580259244;s:79:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\headQuote.html";i:1580301655;s:80:"E:\wamp\www\phpStorm_Prj\EPusher\application\index\view\.\public\navigation.html";i:1580293286;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- 引用文件 -->
-<link rel="stylesheet" href="static/dist/layui-v2.4.5/css/layui.css">
+<link rel="stylesheet" href="static/dist/layui-v2.5.6/css/layui.css">
 <link rel="stylesheet" href="static/css/index.css">
 <link rel="stylesheet" href="static/dist/github-markdown-css/github-markdown.css">
-<script src="static/dist/layui-v2.4.5/layui.js" charset="utf-8"></script>
+<script src="static/dist/layui-v2.5.6/layui.js" charset="utf-8"></script>
 
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
                         <li class="layui-nav-item"><a href="./doc">文档</a></li>
                         <li class="layui-nav-item"><a href="./chanel">通道</a></li>
                         <li class="layui-nav-item"><a href="./apitest">测试</a></li>
-                        <li class="layui-nav-item"><a href="#" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
+                        <li class="layui-nav-item"><a href="javascript:;" id="login"><i class="layui-icon layui-icon-username"> 登录</i></a></li>
                     </ul>
                 </div>
                 <div class = "menu layui-hide-lg layui-hide-md layui-hide-sm">
@@ -72,13 +72,21 @@
 
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <div>
-    <div class="layui-card">
-        <div class="layui-card-body layui-bg-orange">
-            卡片式面板面板通常用于非白色背景色的主体内<br>
-            从而映衬出边框投影
-        </div>
+                    <style>
+    #newChanel {
+        color: #2D93CA;
+    }
+</style>
+<div class="layui-card">
+    <div class="layui-card-body layui-elem-quote layui-bg-orange">
+        <ul>
+            <li>1、测试消息只能选择单用户通道进行测试</li>
+            <li>2、测试消息不会在消息日志中查询出来</li>
+            <li>3、测试消息有更严格的频率限制，仅用作消息格式与服务联通测试</li>
+        </ul>
     </div>
+</div>
+<div>
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">测试通道</label>
@@ -95,7 +103,7 @@
                         <option value="4">杭州</option>
                     </optgroup>
                 </select>
-                <div class="layui-form-mid layui-word-aux">选择发送用户所关联的通道</div>
+                <div class="layui-form-mid layui-word-aux">选择发送用户所关联的通道（<a id="newChanel" href="./chanel">新建通道</a>）</div>
             </div>
         </div>
         <div class="layui-form-item">
